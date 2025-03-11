@@ -60,7 +60,8 @@ export function GalleryOverlay({ data }: { data: Schema }) {
 	const { focusProjectId, focusScreenshotIndex } = useNav()
 
 
-	const project = data.ys_projects.find(project => project.id === focusProjectId)
+	const project = data.ys_projects.find(project => project.id === focusProjectId) || data.ys_projects[0]
+
 
 	// const nextProject = data.ys_projects.find(project => project.id === focusProjectId + 1)
 
