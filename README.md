@@ -1,1 +1,1 @@
-personal website for Janel C Sterbentz @ wwww.janelcsterbentz.com
+https://yury.lerp.io
