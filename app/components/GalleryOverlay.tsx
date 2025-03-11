@@ -81,17 +81,17 @@ export function GalleryOverlay({ data }: { data: Schema }) {
 
 			</div>
 			<div className="fixed left-0 top-0 w-screen h-screen z-40 from-main-500/50 bg-linear-90 to-main-700 to-50%"></div>
-			<div className="fixed left-0 top-0 w-screen h-screen flex flex-row z-50 px-10">
-				<div className="w-2/3 h-full p-10 relative pb-15">
+			<div className="fixed left-0 top-0 w-screen h-screen flex flex-row z-50 md:px-10">
+				<div className="w-full md:w-2/3 h-full md:p-10 relative pb-15">
 					<GalleryImageDisplaySliderBox project={project} focusScreenshotIndex={focusScreenshotIndex} />
-					<div className="absolute left-1/2 bottom-9 transform -translate-x-1/2">
+					<div className="hidden md:flex absolute left-1/2 bottom-9 transform -translate-x-1/2">
 						<ImageSliderNav project={project} />
 					</div>
 					<div className="absolute left-1/2 bottom-9 transform -translate-x-1/2 w-full px-20 pointer-events-none ">
 						<PrevNextProjectNav data={data} />
 					</div>
 				</div>
-				<div className="w-1/3 relative flex flex-col justify-between py-10">
+				<div className="hidden w-1/3 relative md:flex flex-col justify-between py-10">
 					<ProjectItemInfo project={project} />
 				</div>
 			</div>

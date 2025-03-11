@@ -70,7 +70,7 @@ export function NavButton() {
 			useAbsoluteOffset={false}
 			classNames={{
 				style: cn(isGalleryView ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-cyan-500 hover:bg-cyan-400', 'ring ring-3 ring-cyan-400 transition-colors rounded-2xl cursor-pointer z-90'),
-				position: position
+				position: position,
 			}}>
 			{content}
 		</MotionBox >

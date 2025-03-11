@@ -4,8 +4,8 @@ import { getData } from "../lib/getData";
 export async function AboutContent() {
 	const { ys_globals: globals } = await getData()
 
-	return <div className='w-full flex flex-col md:flex-row gap-0 border-main-600 border-solid border-b-1 items-start justify-center content-center'>
-		<div className='w-full md:w-[20rem] shrink-0 h-full flex items-center justify-center py-10 relative '>
+	return <div className='w-full grid grid-cols-1 md:grid-cols-2 gap-0'>
+		<div className='w-full flex-row flex items-center justify-center md:items-end md:justify-end px-10 mt-20 md:mt-0 md:p-10 relative border-main-600 border-dashed border-r-1'>
 			<img className="h-[15em] rounded-2xl " src={getAssetURL(globals.photo)} alt={globals.name} />
 		</div>
 		<div className='p-10'>
