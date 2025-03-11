@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "@directus/sdk": "^19.0.1",
+    "date-fns": "^4.1.0",
+    "lodash": "^4.17.21",
+    "lucide-react": "^0.477.0",
+    "next": "^15.2.1",
+    "postcss": "^8.5.3",
+    "react": "^19.0.0",
+    "react-confetti": "^6.4.0",
+    "react-dom": "^19.0.0",
+    "usehooks-ts": "^3.1.1"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.11",
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/node": "22.13.9",
+    "@types/react": "19.0.10",
+    "autoprefixer": "^10.4.20",
+    "classnames": "^2.5.1",
+    "framer-motion": "^12.4.10",
+    "tailwindcss": "^4.0.11",
+    "typescript": "5.8.2"
+  }
+}

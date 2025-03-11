@@ -1,0 +1,61 @@
+services:
+  database:
+    image: postgis/postgis:13-master
+    # Required when running on platform other than amd64, like Apple M1/M2:
+    # platform: linux/amd64
+    volumes:
+      - ./db/data/database:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: "directus"
+      POSTGRES_PASSWORD: "directus"
+      POSTGRES_DB: "directus"
+    healthcheck:
+      test: ["CMD", "pg_isready", "--host=localhost", "--username=directus"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_interval: 5s
+      start_period: 30s
+  cache:
+    image: redis:6
+    healthcheck:
+      test: ["CMD-SHELL", "[ $$(redis-cli ping) = 'PONG' ]"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_interval: 5s
+      start_period: 30s
+  directus:
+    image: directus/directus:11.5.1
+    ports:
+      - 3001:8055
+    volumes:
+      - ./db/uploads:/directus/uploads
+      - ./db/extensions:/directus/extensions
+    depends_on:
+      database:
+        condition: service_healthy
+      cache:
+        condition: service_healthy
+    environment:
+      SECRET: "Bvfu*&CnPk#2G11ggR&uPu^xb6AaJV#HU0xFyx"
+
+      DB_CLIENT: "pg"
+      DB_HOST: "database"
+      DB_PORT: "5432"
+      DB_DATABASE: "directus"
+      DB_USER: "directus"
+      DB_PASSWORD: "directus"
+
+      CACHE_ENABLED: "true"
+      CACHE_AUTO_PURGE: "true"
+      CACHE_STORE: "redis"
+      REDIS: "redis://cache:6379"
+
+      CORS_ENABLED: 'true'
+      CORS_ORIGIN: 'http://localhost:3000,https://janel-site.vercel.app/,https://janelcsterbentz.com/'
+      CORS_METHODS: 'GET'
+      CORS_CREDENTIALS: 'false'
+
+      ADMIN_EMAIL: "sugar.drop@gmail.com"
+      ADMIN_PASSWORD: "%h9!uzt66jX@5Q@^73sDKrB1k01hnEkFjfWcYa"

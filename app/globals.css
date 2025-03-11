@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+@theme {
+	--color-main: oklch(49.59% 0.11565 259.5);
+	--color-main-50: oklch(74.032% 0.07205 260.52);
+	--color-main-100: oklch(70.508% 0.08282 260.19);
+	--color-main-200: oklch(63.194% 0.10644 259.96);
+	--color-main-300: oklch(55.959% 0.12884 259.92);
+	--color-main-400: oklch(49.59% 0.11565 259.5);
+	--color-main-500: oklch(43.031% 0.09794 259.77);
+	--color-main-600: oklch(36.16% 0.07982 259.56);
+	--color-main-700: oklch(28.94% 0.0585 259.55);
+	--color-main-800: oklch(21.258% 0.03744 258.83);
+	--color-main-900: oklch(12.611% 0.01218 248.87);
+	--color-main-950: oklch(0% 0 none);
+}
+
+/* .font-gloock {
+	font-family: "Gloock", serif;
+	font-weight: 400;
+	font-style: normal;
+} */
+
+.font-display {
+	font-family: "Outfit", sans-serif;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;
+}
