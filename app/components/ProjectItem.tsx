@@ -39,7 +39,7 @@ export function ProjectItem({ project }: { project: Project }) {
 
 	return <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-main-600 border-dashed border-b-1 items-stretch justify-evenly content-stretch">
 		<div className="p-5 md:p-10 h-full w-full flex flex-row items-center md:items-start justify-center md:justify-end border-dashed md:border-r-1 border-main-600">
-			<Clipper className='aspect-video w-full relative rounded-2xl mb-5 bg-main-950 ring-3 ring-main-600 hover:ring-main-400 transition-shadow cursor-pointer!'>
+			<Clipper className='h-[30em] w-full relative rounded-2xl mb-5 bg-main-950 ring-3 ring-main-600 hover:ring-main-400 transition-shadow cursor-pointer!'>
 				<PreviewImageDisplaySliderBox project={project} />
 			</Clipper>
 		</div>
