@@ -26,6 +26,24 @@
 	font-family: "Outfit", sans-serif;
 }
 
+/* ...existing code... */
+
 .scrollbar-hide::-webkit-scrollbar {
-	display: none;
+	width: 8px;
+	height: 8px;
+}
+
+.scrollbar-hide::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 9999px;
+}
+
+.scrollbar-hide::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+/* For Firefox */
+.scrollbar-hide {
+	scrollbar-width: thin;
+	scrollbar-color: rgba(255, 255, 255, 1) transparent;
 }

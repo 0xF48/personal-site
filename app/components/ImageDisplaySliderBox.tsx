@@ -1,14 +1,12 @@
 "use client";
 
-import { getAssetURL } from "../lib/getAssetURL";
 import { Project, Schema } from "../lib/publicEnums";
 import { useEffect, useRef, useState } from "react";
 import { useNav } from "../lib/useNav";
-import { ArrowLeftToLineIcon, ArrowRightIcon, ChevronFirstIcon, ChevronLastIcon, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronFirstIcon, ChevronLastIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import cn from "classnames";
 import { Screenshot } from "./Screenshot";
-
-
+import { FixedSizeList as List } from 'react-window';
 
 export function ImageSliderNav({ project, localFocusScreenshotIndex, setLocalFocusScreenshotIndex }: { project: Project, localFocusScreenshotIndex?: any, setLocalFocusScreenshotIndex?: any }) {
 	let { setFocusScreenshotIndex, focusScreenshotIndex } = useNav()
@@ -29,7 +27,7 @@ export function ImageSliderNav({ project, localFocusScreenshotIndex, setLocalFoc
 	const previewSlidePageIndex = Math.max(0, Math.min(screenshots.length - 1, focusScreenshotIndex))
 
 
-	const lastPageIndex = previewSlidePageIndex == screenshots.length - 1
+	// const lastPageIndex = previewSlidePageIndex == screenshots.length - 1
 
 	// const stopNextNav = (lastPageIndex == true && !nextProject) ? true : false
 	const stopPrevNav = previewSlidePageIndex == 0 ? true : false
@@ -62,12 +60,15 @@ export function ImageSliderNav({ project, localFocusScreenshotIndex, setLocalFoc
 				"transition-all  h-12 w-32 gap-2 rounded-2xl items-center justify-center content-center flex outline-none ring-3",
 				stopNextNav == false ? 'ring-main-500 hover:bg-main-500 cursor-pointer bg-main-600 text-white' : 'ring-main-600 cursor-not-allowed bg-main-700 text-main-400')}>
 			<ChevronRight size={24} />
-			< div className="font-mono font-bold flex flex-row" >
-				<div className="w-5 flex flex-row items-end justify-end">{previewSlidePageIndex + 1}</div><div className="text-main-400">/</div><div className="text-main-200">{project.screenshots.length}</div>
+			<div className="font-mono font-bold flex flex-row">
+				<div className="w-5 flex flex-row items-end justify-end">
+					{previewSlidePageIndex + 1}
+				</div>
+				<div className="text-main-400">/</div>
+				<div className="text-main-200">{project.screenshots.length}</div>
 			</div>
-
-		</button >
-	</div >
+		</button>
+	</div>
 }
 
 
@@ -114,7 +115,7 @@ export function PrevNextProjectNav({ data }: { data: Schema }) {
 				"pointer-events-auto transition-all  h-12 w-32 gap-2 rounded-2xl items-center justify-center content-center flex outline-none ring-3",
 				stopNextNav == false ? 'ring-main-500 hover:bg-main-500 cursor-pointer bg-main-600 text-white' : 'ring-main-600 cursor-not-allowed bg-main-700 text-main-400')}>
 			<ChevronLastIcon size={24} />
-			< div className="font-mono font-bold flex flex-row" >
+			<div className="font-mono font-bold flex flex-row" >
 				<div className="w-5 flex flex-row items-end justify-end">{projectIndex + 1}</div><div className="text-main-400">/</div><div className="text-main-200">{projects.length}</div>
 			</div>
 
@@ -128,6 +129,9 @@ export function PrevNextProjectNav({ data }: { data: Schema }) {
 
 
 export function PreviewImageDisplaySliderBox({ project }: { project: Project }) {
+
+
+
 
 	const { screenshots, id: projectId } = project
 	const [scollOffset, setScrollOffset] = useState(-1)
@@ -167,7 +171,10 @@ export function PreviewImageDisplaySliderBox({ project }: { project: Project }) 
 	}, [scrollContainerRef.current, previewSlidePageIndex]);
 
 
-	return <div className="relative w-full h-full max-h-[20em] ">
+	return <div className="relative w-full h-full p-4">
+		<div className='absolute left-1/2 -translate-x-1/2 -top-6 text-main-500 font-mono text-sm'>
+			scroll or click to expand
+		</div>
 		<div
 			ref={scrollContainerRef}
 			onClick={() => {
@@ -175,13 +182,14 @@ export function PreviewImageDisplaySliderBox({ project }: { project: Project }) 
 				setFocusScreenshotIndex(projectId, previewSlidePageIndex)
 				// toggleGalleryView(true)
 			}}
-			className="w-full h-[20em] rounded-2xl overflow-x-scroll overflow-y-hidden snap-x snap-mandatory scrollbar-hide bg-main-950 ring-3 ring-main-600 hover:ring-main-500 transition-shadow cursor-pointer">
+			className="w-full h-full rounded-2xl overflow-x-scroll overflow-y-hidden snap-x snap-mandatory scrollbar-hide">
 			{scrollContainerRef.current ? <div className="w-fit h-full flex flex-row">
 				{screenshots.map((image, index) =>
 					<Screenshot screenshot={image} containerWidth={scrollContainerRef.current.clientWidth} isLink={false} key={image.directus_files_id.id} />
 				)}
 			</div> : null}
 		</div>
+
 		<div className='absolute left-1/2 -translate-x-1/2 -bottom-6'>
 			<ImageSliderNav project={project} localFocusScreenshotIndex={focusScreenshotIndex} setLocalFocusScreenshotIndex={setLocalFocusScreenshotIndex} />
 		</div>

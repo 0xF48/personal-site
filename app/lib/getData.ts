@@ -23,6 +23,14 @@ export const getData = cache(async (): Promise<Schema> => {
 		client.request(readSingleton('ys_globals'))
 	]);
 
-	return { ys_projects, ys_globals };
+	// Sort projects by end_date in descending order (newest first)
+	const sortedProjects = [...ys_projects].sort((a, b) => {
+
+		if (!a.end_date) return -1;  // Projects without end dates go last
+		if (!b.end_date) return 1;
+		return b.end_date.localeCompare(a.end_date); // Sort descending (newest first)
+	});
+
+	return { ys_projects: sortedProjects, ys_globals };
 
 });

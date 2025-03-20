@@ -5,7 +5,7 @@ import { CodeXmlIcon, GlobeIcon } from "lucide-react";
 import cn from "classnames";
 import { ProjectItemInfoDescription } from "./ProjectItemInfoDescription";
 import { YouTube } from "./YouTube";
-
+import { Clipper } from "./Clipper";
 
 export function ProjectItemInfo({ project }: { project: Project }) {
 	return <div className="h-full w-full flex flex-col">
@@ -17,7 +17,11 @@ export function ProjectItemInfo({ project }: { project: Project }) {
 		</div>
 		<ProjectItemInfoDescription project={project} />
 		<div className="flex flex-col gap-4 mt-8">
-			{project.youtube_id ? <YouTube id={project.youtube_id} /> : null}
+			{project.youtube_id ? (
+
+				<YouTube id={project.youtube_id} />
+
+			) : null}
 			{project.website_url ?
 				<a target='_blank' href={project.website_url} className="text-green-500 flex flex-row gap-2 font-medium font-mono hover:underline hover:text-green-400">
 					<GlobeIcon size={24} />
@@ -33,9 +37,11 @@ export function ProjectItemInfo({ project }: { project: Project }) {
 
 export function ProjectItem({ project }: { project: Project }) {
 
-	return <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-main-600 border-dashed border-t-1 mb-20 items-stretch justify-evenly content-stretch">
+	return <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-main-600 border-dashed border-b-1 items-stretch justify-evenly content-stretch">
 		<div className="p-5 md:p-10 h-full w-full flex flex-row items-center md:items-start justify-center md:justify-end border-dashed md:border-r-1 border-main-600">
-			<PreviewImageDisplaySliderBox project={project} />
+			<Clipper className='aspect-video w-full relative rounded-2xl mb-5 bg-main-950 ring-3 ring-main-600 hover:ring-main-400 transition-shadow cursor-pointer!'>
+				<PreviewImageDisplaySliderBox project={project} />
+			</Clipper>
 		</div>
 		<div className="p-10 h-full w-full">
 			<ProjectItemInfo key={project.id} project={project} />

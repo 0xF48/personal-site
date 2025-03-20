@@ -10,7 +10,7 @@ export function Screenshot({ screenshot, isLink, containerWidth }: { screenshot:
 				scrollSnapAlign: 'center',
 				width: containerWidth
 			}}
-			className="h-full flex items-center justify-center p-10 snap-center" >
+			className="h-full flex items-center justify-center p-4 snap-center" >
 			<video className='w-auto max-w-full h-auto max-h-full' src={getAssetURL(data.id)} autoPlay loop muted playsInline />
 		</div>
 	}
@@ -20,7 +20,7 @@ export function Screenshot({ screenshot, isLink, containerWidth }: { screenshot:
 			scrollSnapAlign: 'center',
 			width: containerWidth
 		}}
-		className="h-full flex items-center justify-center p-10 snap-center" >
+		className="h-full flex items-center justify-center p-4 snap-center" >
 		<img className='w-auto max-w-full h-auto max-h-full' src={getAssetURL(data.id)} alt={data.id} />
 	</div>
 }
