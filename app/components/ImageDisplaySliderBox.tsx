@@ -172,9 +172,9 @@ export function PreviewImageDisplaySliderBox({ project }: { project: Project }) 
 
 
 	return <div className="relative w-full h-full p-4">
-		<div className='absolute left-1/2 -translate-x-1/2 -top-6 text-main-500 font-mono text-sm'>
+		<pre className='absolute left-1/2 -translate-x-1/2 -top-6 text-main-500 font-mono text-xs'>
 			scroll or click to expand
-		</div>
+		</pre>
 		<div
 			ref={scrollContainerRef}
 			onClick={() => {

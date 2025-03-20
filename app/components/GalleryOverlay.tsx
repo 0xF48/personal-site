@@ -43,13 +43,17 @@ export function GalleryImageDisplaySliderBox({ project, focusScreenshotIndex }: 
 	}, [scrollContainerRef.current, previewSlidePageIndex]);
 
 
-	return <div
-		ref={scrollContainerRef}
-		className="w-full h-full rounded-2xl overflow-x-scroll overflow-y-hidden snap-x snap-mandatory scrollbar-hide bg-black">
-		{scrollContainerRef.current ? <div className="w-fit h-full flex flex-row">
-			{screenshots.map((screenshot, index) => <Screenshot key={index} containerWidth={scrollContainerRef.current.clientWidth} isLink={true} screenshot={screenshot} />)}
-		</div> : null}
+	return <div className="w-full h-full py-4 px-2 bg-black rounded-2xl">
+		<div
+			ref={scrollContainerRef}
+			className="w-full h-full overflow-x-scroll overflow-y-hidden snap-x snap-mandatory scrollbar-hide bg-black relative">
+			<div className="pointer-events-none absolute left-0 top-0 w-screen h-screen z-0 from-main-500/0 bg-linear-180 to-black from-50% to-100%"></div>
+			{scrollContainerRef.current ? <div className="w-fit h-full flex flex-row">
+				{screenshots.map((screenshot, index) => <Screenshot key={index} containerWidth={scrollContainerRef.current.clientWidth} isLink={true} screenshot={screenshot} />)}
+			</div> : null}
+		</div>
 	</div>
+
 
 }
 
@@ -85,10 +89,10 @@ export function GalleryOverlay({ data }: { data: Schema }) {
 			<div className="fixed left-0 top-0 w-screen h-screen flex flex-row z-50 md:px-10">
 				<div className="w-full md:w-2/3 h-full md:p-10 relative pb-15">
 					<GalleryImageDisplaySliderBox project={project} focusScreenshotIndex={focusScreenshotIndex} />
-					<div className="hidden md:flex absolute left-1/2 bottom-9 transform -translate-x-1/2">
+					<div className="hidden md:flex absolute left-1/2 bottom-18 transform -translate-x-1/2">
 						<ImageSliderNav project={project} />
 					</div>
-					<div className="absolute left-1/2 bottom-9 transform -translate-x-1/2 w-full px-20 pointer-events-none ">
+					<div className="absolute left-1/2 bottom-18 transform -translate-x-1/2 w-full px-20 pointer-events-none ">
 						<PrevNextProjectNav data={data} />
 					</div>
 				</div>

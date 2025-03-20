@@ -9,7 +9,7 @@ import { Clipper } from "./Clipper";
 
 export function ProjectItemInfo({ project }: { project: Project }) {
 	return <div className="h-full w-full flex flex-col">
-		<h1 className="font-black font-display text-4xl">{project.name}</h1>
+		<h1 className="font-black font-display text-4xl break-words">{project.name}</h1>
 		<div className="flex flex-row gap-2 mb-6 mt-2 font-mono text-sm text-main-200">
 			<div>{format(new Date(project.start_date), 'MM/yyyy')}</div>
 			<div className="text-main-400">-</div>

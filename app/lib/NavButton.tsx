@@ -58,23 +58,17 @@ export function NavButton() {
 		</div>
 	}
 
-	return <>
-		{/* {createPortal(<div
-			className={cn(
-				"z-10 w-full h-full fixed transition-opacity duration-200 left-0 top-0 bg-main-800/90 backdrop-blur-xl",
-				isGalleryView ? ' opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none')}>
-		</div >, document.body)} */}
-		<MotionBox
-			resetKey={resetKey}
-			relativeContentPosition={false}
-			useAbsoluteOffset={false}
-			classNames={{
-				style: cn(isGalleryView ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-cyan-500 hover:bg-cyan-400', 'ring ring-3 ring-cyan-400 transition-colors rounded-2xl cursor-pointer z-90'),
-				position: position,
-			}}>
-			{content}
-		</MotionBox >
-	</>
+	return <MotionBox
+		resetKey={resetKey}
+		relativeContentPosition={false}
+		useAbsoluteOffset={false}
+		classNames={{
+			style: cn(isGalleryView ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-cyan-500 hover:bg-cyan-400', 'ring ring-3 ring-cyan-400 transition-colors rounded-2xl cursor-pointer z-90 hidden md:flex'),
+			position: position,
+		}}>
+		{content}
+	</MotionBox >
+
 
 
 }
