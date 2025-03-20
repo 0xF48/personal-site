@@ -48,16 +48,16 @@ export function ImageSliderNav({ project, localFocusScreenshotIndex, setLocalFoc
 		<button
 			onClick={navToPreviousSlidePage}
 			className={cn(
-				"transition-all  h-12 w-12 rounded-2xl items-center justify-center content-center flex outline-none ring-3",
-				stopPrevNav == false ? 'ring-main-500 hover:bg-main-500 cursor-pointer bg-main-600 text-white' : 'ring-main-600 cursor-not-allowed bg-main-700 text-main-400')}>
+				"transition-all  h-12 w-12 rounded-2xl items-center justify-center content-center flex outline-none ring-3 ",
+				stopPrevNav == false ? 'ring-main-500 hover:bg-main-500 cursor-pointer bg-main-600 text-white active:ring-main-400' : 'ring-main-700 cursor-not-allowed bg-main-700 text-main-400')}>
 
 			<ChevronLeft size={24} />
 		</button>
 		<button
 			onClick={navToNextSlidePage}
 			className={cn(
-				"transition-all  h-12 w-32 gap-2 rounded-2xl items-center justify-center content-center flex outline-none ring-3",
-				stopNextNav == false ? 'ring-main-500 hover:bg-main-500 cursor-pointer bg-main-600 text-white' : 'ring-main-600 cursor-not-allowed bg-main-700 text-main-400')}>
+				"transition-all  h-12 w-32 gap-2 rounded-2xl items-center justify-center content-center flex outline-none ring-3 ",
+				stopNextNav == false ? 'ring-main-500 hover:bg-main-500 cursor-pointer bg-main-600 text-white active:ring-main-400' : 'ring-main-700 cursor-not-allowed bg-main-700 text-main-400')}>
 			<ChevronRight size={24} />
 			<div className="font-mono font-bold flex flex-row">
 				<div className="w-5 flex flex-row items-end justify-end">
@@ -102,8 +102,8 @@ export function PrevNextProjectNav({ data }: { data: Schema }) {
 		<button
 			onClick={stopPrevNav == false ? navToPreviousProject : null}
 			className={cn(
-				"pointer-events-auto transition-all  h-12 w-12 rounded-2xl items-center justify-center content-center flex outline-none ring-3"
-				, stopPrevNav == false ? 'ring-main-500 hover:bg-main-500 cursor-pointer bg-main-600 text-white' : 'ring-main-600 cursor-not-allowed bg-main-700 text-main-400'
+				"pointer-events-auto transition-all  h-12 w-12 rounded-2xl items-center justify-center content-center flex outline-none ring-3 "
+				, stopPrevNav == false ? 'ring-main-500 hover:bg-main-500 cursor-pointer bg-main-600 text-white active:ring-main-300' : 'ring-main-600 cursor-not-allowed bg-main-700 text-main-400'
 			)}>
 			<ChevronFirstIcon size={24} />
 			{/* {prevProject ? prevProject.name : null} */}
@@ -111,8 +111,8 @@ export function PrevNextProjectNav({ data }: { data: Schema }) {
 		<button
 			onClick={navToNextProject}
 			className={cn(
-				"pointer-events-auto transition-all  h-12 w-32 gap-2 rounded-2xl items-center justify-center content-center flex outline-none ring-3",
-				stopNextNav == false ? 'ring-main-500 hover:bg-main-500 cursor-pointer bg-main-600 text-white' : 'ring-main-600 cursor-not-allowed bg-main-700 text-main-400')}>
+				"pointer-events-auto transition-all  h-12 w-32 gap-2 rounded-2xl items-center justify-center content-center flex outline-none ring-3 ",
+				stopNextNav == false ? 'ring-main-500 hover:bg-main-500 cursor-pointer bg-main-600 text-white active:ring-main-300' : 'ring-main-600 cursor-not-allowed bg-main-700 text-main-400')}>
 			<ChevronLastIcon size={24} />
 			<div className="font-mono font-bold flex flex-row" >
 				<div className="w-5 flex flex-row items-end justify-end">{projectIndex + 1}</div><div className="text-main-400">/</div><div className="text-main-200">{projects.length}</div>

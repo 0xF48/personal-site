@@ -2,18 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
 
 @theme {
-	--color-main: oklch(49.59% 0.11565 259.5);
-	--color-main-50: oklch(74.032% 0.07205 260.52);
-	--color-main-100: oklch(70.508% 0.08282 260.19);
-	--color-main-200: oklch(63.194% 0.10644 259.96);
-	--color-main-300: oklch(55.959% 0.12884 259.92);
-	--color-main-400: oklch(49.59% 0.11565 259.5);
-	--color-main-500: oklch(43.031% 0.09794 259.77);
-	--color-main-600: oklch(36.16% 0.07982 259.56);
-	--color-main-700: oklch(28.94% 0.0585 259.55);
-	--color-main-800: oklch(21.258% 0.03744 258.83);
-	--color-main-900: oklch(12.611% 0.01218 248.87);
-	--color-main-950: oklch(0% 0 none);
+	--color-main: oklch(45.251% 0.05127 268.74);
+	--color-main-50: oklch(68.319% 0.04689 272.4);
+	--color-main-100: oklch(65.7% 0.05057 271.76);
+	--color-main-200: oklch(60.106% 0.05982 270.92);
+	--color-main-300: oklch(54.667% 0.06649 269.59);
+	--color-main-400: oklch(50.076% 0.05958 269.95);
+	--color-main-500: oklch(45.251% 0.05127 268.74);
+	--color-main-600: oklch(39.261% 0.04256 268.49);
+	--color-main-700: oklch(33.085% 0.03512 268.77);
+	--color-main-800: oklch(26.551% 0.02546 268.28);
+	--color-main-900: oklch(19.586% 0.01492 266.81);
 }
 
 /* .font-gloock {

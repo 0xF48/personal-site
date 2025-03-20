@@ -63,7 +63,7 @@ export function NavButton() {
 		relativeContentPosition={false}
 		useAbsoluteOffset={false}
 		classNames={{
-			style: cn(isGalleryView ? 'bg-cyan-400 hover:bg-cyan-500' : 'bg-cyan-500 hover:bg-cyan-400', 'ring ring-3 ring-cyan-400 transition-colors rounded-2xl cursor-pointer z-90 hidden md:flex'),
+			style: cn(isGalleryView ? 'bg-main-400 hover:bg-main-500' : 'bg-main-500 hover:bg-main-400', 'active:ring-main-300 ring ring-3 ring-main-400 transition-colors rounded-2xl cursor-pointer z-90 hidden md:flex'),
 			position: position,
 		}}>
 		{content}

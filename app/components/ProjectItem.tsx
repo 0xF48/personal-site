@@ -51,7 +51,7 @@ export function ProjectItem({ project }: { project: Project }) {
 				<ProjectItemHeader project={project} />
 			</div>
 			<div className="p-5 md:p-10 h-full w-full flex flex-row items-center md:items-start justify-center md:justify-end border-dashed md:border-r-1 border-main-600">
-				<Clipper className='h-[30em] w-full relative rounded-2xl mb-5 bg-main-950 ring-3 ring-main-600 hover:ring-main-400 transition-shadow cursor-pointer!'>
+				<Clipper className='h-[30em] w-full relative rounded-2xl mb-5 bg-black ring-3 ring-main-600 hover:ring-main-400 transition-shadow cursor-pointer!'>
 					<PreviewImageDisplaySliderBox project={project} />
 				</Clipper>
 			</div>
