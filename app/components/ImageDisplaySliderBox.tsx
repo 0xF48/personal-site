@@ -172,15 +172,17 @@ export function PreviewImageDisplaySliderBox({ project }: { project: Project }) 
 
 
 	return <div className="relative w-full h-full p-4">
-		<pre className='absolute left-1/2 -translate-x-1/2 -top-6 text-main-500 font-mono text-xs'>
+		<pre className='absolute left-1/2 -translate-x-1/2 -top-6 text-main-500 font-mono text-xs hidden md:flex'>
 			scroll or click to expand
 		</pre>
 		<div
 			ref={scrollContainerRef}
 			onClick={() => {
-				// console.log('clicked', projectId, previewSlidePageIndex)
+				if (window.matchMedia("(min-width: 640px)").matches == false) {
+					return;
+				}
 				setFocusScreenshotIndex(projectId, previewSlidePageIndex)
-				// toggleGalleryView(true)
+
 			}}
 			className="w-full h-full rounded-2xl overflow-x-scroll overflow-y-hidden snap-x snap-mandatory scrollbar-hide">
 			{scrollContainerRef.current ? <div className="w-fit h-full flex flex-row">
