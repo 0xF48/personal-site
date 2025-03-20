@@ -50,3 +50,72 @@
 body {
 	overflow-x: hidden;
 }
+
+
+.border-long-dashed-t {
+	position: relative;
+}
+
+.border-long-dashed-t::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background-image: linear-gradient(to right, var(--color-main-600) 30%, transparent 30%);
+	background-size: 20px 2px;
+	background-repeat: repeat-x;
+	pointer-events: none;
+}
+
+.border-long-dashed-b {
+	position: relative;
+}
+
+.border-long-dashed-b::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background-image: linear-gradient(to right, var(--color-main-600) 30%, transparent 30%);
+	background-size: 20px 2px;
+	background-repeat: repeat-x;
+	pointer-events: none;
+}
+
+.border-long-dashed-l {
+	position: relative;
+}
+
+.border-long-dashed-l::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 2px;
+	background-image: linear-gradient(to bottom, var(--color-main-600) 30%, transparent 30%);
+	background-size: 2px 20px;
+	background-repeat: repeat-y;
+	pointer-events: none;
+}
+
+.border-long-dashed-r {
+	position: relative;
+}
+
+.border-long-dashed-r::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 2px;
+	background-image: linear-gradient(to bottom, var(--color-main-600) 30%, transparent 30%);
+	background-size: 2px 20px;
+	background-repeat: repeat-y;
+	pointer-events: none;
+}

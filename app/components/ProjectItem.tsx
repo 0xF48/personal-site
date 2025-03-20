@@ -46,11 +46,11 @@ export function ProjectItemInfo({ project }: { project: Project }) {
 
 export function ProjectItem({ project }: { project: Project }) {
 	return <div className="flex flex-col">
-		<div className="relative grid grid-cols-1 md:grid-cols-2 gap-0 border-main-600 border-dashed border-b-1 border-t-1 items-stretch justify-evenly content-stretch ">
+		<div className="relative grid grid-cols-1 md:grid-cols-2 gap-0 border-long-dashed-b border-long-dashed-t  items-stretch justify-evenly content-stretch ">
 			<div className="pl-10 pt-10 flex md:hidden pb-0">
 				<ProjectItemHeader project={project} />
 			</div>
-			<div className="p-5 md:p-10 h-full w-full flex flex-row items-center md:items-start justify-center md:justify-end border-dashed md:border-r-1 border-main-600">
+			<div className="p-5 md:p-10 h-full w-full flex flex-row items-center md:items-start justify-center md:justify-end  border-long-dashed-r">
 				<Clipper className='h-[30em] w-full relative rounded-2xl mb-5 bg-black ring-3 ring-main-600 hover:ring-main-400 transition-shadow cursor-pointer!'>
 					<PreviewImageDisplaySliderBox project={project} />
 				</Clipper>
@@ -60,7 +60,7 @@ export function ProjectItem({ project }: { project: Project }) {
 			</div>
 		</div>
 		<div className="h-30 flex items-center justify-center">
-			<div className="w-8 h-3 rounded-md bg-main-600 "></div>
+			<div className="w-8 h-1 rounded-md bg-main-600 "></div>
 		</div>
 
 	</div>
