@@ -8,7 +8,7 @@ import { YouTube } from "./YouTube";
 import { Clipper } from "./Clipper";
 
 export function ProjectItemHeader({ project }: { project: Project }) {
-	return <div className="w-full flex flex-col">
+	return <div className="w-full flex flex-col pb-3">
 		<h1 className="font-black font-display text-4xl break-words">{project.name}</h1>
 		<div className="flex flex-row gap-2 md:mb-6 mt-2 font-mono text-sm text-main-200">
 			<div>{format(new Date(project.start_date), 'MMM yyyy')}</div>
@@ -25,7 +25,7 @@ export function ProjectItemInfo({ project }: { project: Project }) {
 		</div>
 
 		<ProjectItemInfoDescription project={project} />
-		<div className="flex flex-col gap-4 mt-8">
+		<div className="flex flex-col gap-4 mt-8 pb-3">
 			{project.youtube_id ? (
 
 				<YouTube id={project.youtube_id} />
