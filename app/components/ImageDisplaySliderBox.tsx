@@ -78,7 +78,7 @@ export function PrevNextProjectNav({ data }: { data: Schema }) {
 	const { ys_projects: projects } = data
 
 
-	const projectIndex = projects.findIndex(project => project.id === focusProjectId)
+	const projectIndex = Math.max(0, projects.findIndex(project => project.id === focusProjectId))
 	const project = projects[projectIndex]
 	const nextProject = projects[projectIndex + 1]
 	const prevProject = projects[projectIndex - 1]
