@@ -49,7 +49,7 @@ export function ImageSliderNav({ project, localFocusScreenshotIndex, setLocalFoc
 			onClick={navToPreviousSlidePage}
 			className={cn(
 				"transition-all  h-12 w-12 rounded-2xl items-center justify-center content-center flex outline-none ring-3 ",
-				stopPrevNav == false ? 'ring-main-500 hover:bg-main-500 cursor-pointer bg-main-600 text-white active:ring-main-400' : 'ring-main-700 cursor-not-allowed bg-main-700 text-main-400')}>
+				stopPrevNav == false ? 'ring-main-500 hover:bg-main-500 cursor-pointer bg-main-600 text-white active:ring-main-300' : 'ring-main-700 cursor-not-allowed bg-main-700 text-main-400')}>
 
 			<ChevronLeft size={24} />
 		</button>
@@ -57,7 +57,7 @@ export function ImageSliderNav({ project, localFocusScreenshotIndex, setLocalFoc
 			onClick={navToNextSlidePage}
 			className={cn(
 				"transition-all  h-12 w-32 gap-2 rounded-2xl items-center justify-center content-center flex outline-none ring-3 ",
-				stopNextNav == false ? 'ring-main-500 hover:bg-main-500 cursor-pointer bg-main-600 text-white active:ring-main-400' : 'ring-main-700 cursor-not-allowed bg-main-700 text-main-400')}>
+				stopNextNav == false ? 'ring-main-500 hover:bg-main-500 cursor-pointer bg-main-600 text-white active:ring-main-300' : 'ring-main-700 cursor-not-allowed bg-main-700 text-main-400')}>
 			<ChevronRight size={24} />
 			<div className="font-mono font-bold flex flex-row">
 				<div className="w-5 flex flex-row items-end justify-end">
