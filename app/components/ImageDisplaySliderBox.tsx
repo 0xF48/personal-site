@@ -191,7 +191,7 @@ export function PreviewImageDisplaySliderBox({ project }: { project: Project }) 
 			</div> : null}
 		</div>
 
-		<div className='absolute left-1/2 -translate-x-1/2 -bottom-6'>
+		<div className='absolute left-10 -bottom-6'>
 			<ImageSliderNav project={project} localFocusScreenshotIndex={focusScreenshotIndex} setLocalFocusScreenshotIndex={setLocalFocusScreenshotIndex} />
 		</div>
 
