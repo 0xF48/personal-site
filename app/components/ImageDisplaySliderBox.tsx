@@ -6,7 +6,6 @@ import { useNav } from "../lib/useNav";
 import { ChevronFirstIcon, ChevronLastIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import cn from "classnames";
 import { Screenshot } from "./Screenshot";
-import { FixedSizeList as List } from 'react-window';
 
 export function ImageSliderNav({ project, localFocusScreenshotIndex, setLocalFocusScreenshotIndex }: { project: Project, localFocusScreenshotIndex?: any, setLocalFocusScreenshotIndex?: any }) {
 	let { setFocusScreenshotIndex, focusScreenshotIndex } = useNav()
