@@ -47,3 +47,7 @@
 	scrollbar-width: thin;
 	scrollbar-color: rgba(255, 255, 255, 1) transparent;
 }
+
+body {
+	overflow-x: hidden;
+}
