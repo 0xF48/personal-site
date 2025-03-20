@@ -10,7 +10,7 @@ import { Clipper } from "./Clipper";
 export function ProjectItemHeader({ project }: { project: Project }) {
 	return <div className="w-full flex flex-col">
 		<h1 className="font-black font-display text-4xl break-words">{project.name}</h1>
-		<div className="flex flex-row gap-2 mb-6 mt-2 font-mono text-sm text-main-200">
+		<div className="flex flex-row gap-2 md:mb-6 mt-2 font-mono text-sm text-main-200">
 			<div>{format(new Date(project.start_date), 'MM/yyyy')}</div>
 			<div className="text-main-400">-</div>
 			<div className={cn(project.end_date ? 'text-main-200' : 'text-amber-300')}>{project.end_date ? format(new Date(project.end_date), 'MM/yyyy') : 'present'}</div>
@@ -45,19 +45,23 @@ export function ProjectItemInfo({ project }: { project: Project }) {
 }
 
 export function ProjectItem({ project }: { project: Project }) {
+	return <div className="flex flex-col">
+		<div className="relative grid grid-cols-1 md:grid-cols-2 gap-0 border-main-600 border-dashed border-b-1 border-t-1 items-stretch justify-evenly content-stretch ">
+			<div className="pl-10 pt-10 flex md:hidden pb-0">
+				<ProjectItemHeader project={project} />
+			</div>
+			<div className="p-5 md:p-10 h-full w-full flex flex-row items-center md:items-start justify-center md:justify-end border-dashed md:border-r-1 border-main-600">
+				<Clipper className='h-[30em] w-full relative rounded-2xl mb-5 bg-main-950 ring-3 ring-main-600 hover:ring-main-400 transition-shadow cursor-pointer!'>
+					<PreviewImageDisplaySliderBox project={project} />
+				</Clipper>
+			</div>
+			<div className="px-5 py-4 md:p-10 h-full w-full">
+				<ProjectItemInfo key={project.id} project={project} />
+			</div>
+		</div>
+		<div className="h-30 flex items-center justify-center">
+			<div className="w-8 h-3 rounded-md bg-main-600 "></div>
+		</div>
 
-	return <div className="relative grid grid-cols-1 md:grid-cols-2 gap-0 border-main-600 border-dashed border-b-1 border-t-1 items-stretch justify-evenly content-stretch mb-35">
-		<div className="p-10 flex md:hidden pb-0">
-			<ProjectItemHeader project={project} />
-		</div>
-		<div className="p-5 md:p-10 h-full w-full flex flex-row items-center md:items-start justify-center md:justify-end border-dashed md:border-r-1 border-main-600">
-			<Clipper className='h-[30em] w-full relative rounded-2xl mb-5 bg-main-950 ring-3 ring-main-600 hover:ring-main-400 transition-shadow cursor-pointer!'>
-				<PreviewImageDisplaySliderBox project={project} />
-			</Clipper>
-		</div>
-		<div className="px-8 py-4 md:p-10 h-full w-full">
-			<ProjectItemInfo key={project.id} project={project} />
-		</div>
-		<div className="w-8 h-3 rounded-md bg-main-600 absolute left-1/2 -translate-x-1/2 -bottom-20"></div>
 	</div>
 }

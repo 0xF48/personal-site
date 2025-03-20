@@ -32,7 +32,7 @@ export default async function RootLayout({
       <body className="bg-main-700 text-white w-full h-fit min-h-screen justify-between flex flex-col">
         <NavButtonWrapper />
 
-        <div className="w-full mx-auto max-w-6xl min-h-[70vh] border-main-600 border-dashed border-l-1 border-r-1">
+        <div className="w-full mx-auto max-w-6xl min-h-[70vh] border-main-600 border-dashed md:border-l-1 md:border-r-1">
           {children}
         </div>
         <Footer />
