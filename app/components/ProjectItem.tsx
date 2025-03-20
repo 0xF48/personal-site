@@ -11,9 +11,9 @@ export function ProjectItemHeader({ project }: { project: Project }) {
 	return <div className="w-full flex flex-col">
 		<h1 className="font-black font-display text-4xl break-words">{project.name}</h1>
 		<div className="flex flex-row gap-2 md:mb-6 mt-2 font-mono text-sm text-main-200">
-			<div>{format(new Date(project.start_date), 'MM/yyyy')}</div>
-			<div className="text-main-400">-</div>
-			<div className={cn(project.end_date ? 'text-main-200' : 'text-amber-300')}>{project.end_date ? format(new Date(project.end_date), 'MM/yyyy') : 'present'}</div>
+			<div>{format(new Date(project.start_date), 'MMM yyyy')}</div>
+			<div className="text-main-500">-</div>
+			<div className={cn(project.end_date ? 'text-main-200' : 'text-amber-300')}>{project.end_date ? format(new Date(project.end_date), 'MMM yyyy') : 'present'}</div>
 		</div>
 	</div>
 }

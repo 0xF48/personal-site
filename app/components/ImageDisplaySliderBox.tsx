@@ -170,8 +170,8 @@ export function PreviewImageDisplaySliderBox({ project }: { project: Project }) 
 	}, [scrollContainerRef.current, previewSlidePageIndex]);
 
 
-	return <div className="relative w-full h-full p-4">
-		<pre className='absolute left-1/2 -translate-x-1/2 -top-6 text-main-500 font-mono text-xs hidden md:flex'>
+	return <div className="relative w-full h-full p-4 mt-0">
+		<pre className='absolute right-3 -bottom-8 text-main-500 font-mono text-sm hidden md:flex'>
 			scroll or click to expand
 		</pre>
 		<div

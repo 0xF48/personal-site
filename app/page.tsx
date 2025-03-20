@@ -18,7 +18,7 @@ export default async function Home({ searchParams }: {
 
 		<AboutContent />
 
-		<div className='border-b-1 border-main-600 border-dashed w-full p-10 flex items-center justify-center font-mono text-main-300'>
+		<div className='border-b-1 border-main-600 border-dashed w-full p-10 flex items-center justify-center font-mono text-main-200'>
 			My Projects
 		</div>
 		<ProjectsList />
