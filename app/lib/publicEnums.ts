@@ -46,5 +46,5 @@ export type Schema = {
 }
 
 export const enum GLOBAL {
-	DIRECTUS_API = "http://admin.lerp.io:3001/",
+	DIRECTUS_API = "http://admin.lerp.io/",
 }
